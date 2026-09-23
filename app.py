@@ -82,6 +82,15 @@ else:
       label="Total Reviewed", value=f"{reviewed_count} / {len(quizzes)}"
   )
 
+  # Download the feedback collected so far (storage is ephemeral on Streamlit Cloud)
+  st.sidebar.download_button(
+      label="⬇️ Download feedback CSV",
+      data=load_feedback().to_csv(index=False).encode("utf-8"),
+      file_name="human_validation_feedback.csv",
+      mime="text/csv",
+      disabled=df_feedback.empty,
+  )
+
   quiz_index = st.sidebar.number_input(
       "Jump to Quiz Index",
       min_value=0,
