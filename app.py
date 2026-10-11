@@ -6,7 +6,8 @@ import streamlit as st
 # Configuration paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 COMBINED_DIR = os.path.join(BASE_DIR, "combined_data")
-JSON_PATH = os.path.join(COMBINED_DIR, "quiz_good.json")
+# JSON_PATH = os.path.join(COMBINED_DIR, "quiz_good.json")
+JSON_PATH = os.path.join(COMBINED_DIR, "clean_image_quizzes_2_4.json")
 ASSETS_DIR = os.path.join(BASE_DIR, "image_quiz_4_6", "assets")
 FEEDBACK_CSV = os.path.join(COMBINED_DIR, "human_validation_feedback.csv")
 
