@@ -7,8 +7,8 @@ import streamlit as st
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 COMBINED_DIR = os.path.join(BASE_DIR, "combined_data")
 # JSON_PATH = os.path.join(COMBINED_DIR, "quiz_good.json")
-JSON_PATH = os.path.join(COMBINED_DIR, "clean_image_quizzes_2_4.json")
-ASSETS_DIR = os.path.join(BASE_DIR, "image_quiz_4_6", "assets")
+JSON_PATH = os.path.join(COMBINED_DIR, "clean_image_quizzes_2_4_updated_4_options.json")
+ASSETS_DIR = os.path.join(BASE_DIR, "image_quiz_4_6", "assets_2_4")
 FEEDBACK_CSV = os.path.join(COMBINED_DIR, "human_validation_feedback.csv")
 
 st.set_page_config(page_title="Quiz Visual Validator & Feedback", layout="wide")
@@ -168,12 +168,13 @@ else:
   with st.form(key=f"eval_form_{quiz_id}"):
     status = st.radio(
         "Select Evaluation Option:",
-        options=["good", "text option", "change images", "discard"],
+        options=["good", "text option", "change images", "discard","change question"],
         index=[
             "good",
             "text option",
             "change images",
             "discard",
+            "change question",
         ].index(default_status),
         horizontal=True,
     )
